@@ -10,9 +10,9 @@
     <title>Carousel</title>
 </head>
 <body>
-    <div class="container">
+    <div id="container">
         <div class="container-main-img">
-            <img class="main-img " src="img/01.jpg" alt="">
+            <img class="main-img active-img" :src="image.url" v-for="image in allImg" alt="">
             <div class="text-img">
                 <h3>Ciao</h3>
                 <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h5>
