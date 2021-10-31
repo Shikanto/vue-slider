@@ -19,6 +19,11 @@
     text-align: end;
 }
 
+.shell{
+    width: 100%;
+    height: 100%;
+}
+
 .sidebar{
     display: flex;
     flex-direction: column;
@@ -44,11 +49,19 @@
 }
 
 .main-img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    position: absolute;
+    top:0;
+    bottom:0;
+    left: 0;
+    right: 0;
     opacity: 0;
     transition: opacity 0.5s ;
+}
+
+.main-img img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 .active-img{
@@ -57,8 +70,9 @@
 
 .text-img{
     position: absolute;
-    bottom: 40px;
+    bottom: 20px;
     right: 30px;
+    font-size: 1.5rem;
 }
 
 .arrow{
@@ -81,4 +95,8 @@
 
 .arrow-down{
     bottom: 1.1rem;
+}
+
+.border-active{
+    border: 2px red solid;
 }

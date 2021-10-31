@@ -12,32 +12,22 @@
 <body>
     <div id="container">
         <div class="container-main-img">
-            <img class="main-img active-img" :src="image.url" v-for="image in allImg" alt="">
-            <div class="text-img">
-                <h3>Ciao</h3>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h5>
+            <div class="main-img" :class="index === currentIndex ? 'active-img' : ''" v-for="(image, index) in allImg">
+                <img :src="image.url" alt="">
+                <div class="text-img">
+                    <h3>{{image.title}}</h3>
+                    <h5>{{image.text}}</h5>
+                </div>
             </div>
         </div>
         <div class="sidebar">
-            <div class="arrow arrow-up">
+            <div @click="goUp" class="arrow arrow-up">
                 <i class="fas fa-chevron-up"></i>
             </div>
-            <div class="sidebar-container-img">
-                <img class="sidebar-img " src="img/01.jpg" alt="">
+            <div class="sidebar-container-img" :class="index === currentIndex ? 'border-active' : ''" v-for="(image, index) in allImg ">
+                <img class="sidebar-img" :src="image.url" alt="">
             </div>
-            <div class="sidebar-container-img">
-                <img class="sidebar-img " src="img/02.jpg" alt="">
-            </div>
-            <div class="sidebar-container-img">
-                <img class="sidebar-img " src="img/03.jpg" alt="">
-            </div>
-            <div class="sidebar-container-img">
-                <img class="sidebar-img " src="img/04.jpg" alt="">
-            </div>
-            <div class="sidebar-container-img">
-                <img class="sidebar-img " src="img/05.jpg" alt="">
-            </div>
-            <div class="arrow arrow-down">
+            <div @click="goDown" class="arrow arrow-down">
                 <i class="fas fa-chevron-down"></i>
             </div>
         </div>
