@@ -32,23 +32,33 @@ new Vue ({
         ],
         currentIndex:  0,
     },
-    methods: { // perchè abbiamo dovuto creare newIndex?? invece di fare riferimento a currentIndex
+    methods: { 
         goUp() {
-            let newIndex = this.currentIndex -1;
+            /* let newIndex = this.currentIndex -1;
             
             if (newIndex < 0) {
                 newIndex = this.allImg.length -1;
             }
-            this.currentIndex = newIndex
+            this.currentIndex = newIndex */
+            this.currentIndex --;
+            if (this.currentIndex < 0) {
+                this.currentIndex = this.allImg.length -1;
+            }
+
         },
         goDown() {
 
-            let newIndex = this.currentIndex +1;
+            /* let newIndex = this.currentIndex +1;
             
             if (newIndex > this.allImg.length -1) {
                 newIndex = 0;
             }
-            this.currentIndex = newIndex;
+            this.currentIndex = newIndex; */
+            this.currentIndex ++
+            if (this.currentIndex > this.allImg.length -1) {
+                this.currentIndex = 0;
+            }
+
         }
     }
 });
